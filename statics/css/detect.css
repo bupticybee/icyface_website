@@ -2,3 +2,25 @@
     text-align: center;
     font-size: 60px;
 }
+.detect-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin:30px;
+ }
+.img-right-show {
+    min-width: 300px;
+    flex: 1.5;
+    height: 300px;
+}
+.img-rotate-full {
+    min-width: 500px;
+    display: flex;
+    flex: 2;
+    height: 300px;
+}
+.selector-left {
+    flex: 2;
+}
+.img-right {
+    flex: 7;
+}
