@@ -16,15 +16,16 @@
     min-width: 500px;
     display: flex;
     flex: 2;
-    height: 300px;
+    height: 600px;
     overflow: hidden;
 }
 .sm-left {
+    max-width: 300px;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     flex: 2;
-    height: 300px;
+    height: 100%;
     overflow: hidden;
 }
 .selector-left {
@@ -33,6 +34,11 @@
 }
 .img-right {
     flex: 7;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
 }
 .demo-image-list {
     box-sizing: border-box;
@@ -48,9 +54,28 @@
     border-width: 3px;    
     border-color:gray;
 }
-.back-arrow {
-    height: 20px;
+.demo-image-list-selected {
+    box-sizing: border-box;
+    border: solid;
+    border-width: 3px;    
+    border-color:lightblue;
 }
-.forward-arrow {
-    height: 20px;
+.image-holder-right {
+    height: 100%;
+    width: auto;
+}
+.image-big {
+    display: block;
+    flex: 1;
+    height: 300px;
+    text-align: center;
+}
+.json-back {
+    border: solid;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    height: 300px;
+    flex:1;
 }
