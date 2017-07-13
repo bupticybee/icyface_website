@@ -1,6 +1,6 @@
 {% extends 'web/base.html' %}
 {% block css %}
-        <link rel="stylesheet" type="" href="statics/css/detect.css">
+        <link rel="stylesheet" type="" href="statics/css/detect.css?v=5.7">
 {% endblock css%}
         {% block content %}
 
@@ -23,7 +23,8 @@
                 </div>
                 <div class="img-right">
                     <div class='image-big'>
-                        <img src={{dc.selected}} class="image-holder-right" alt="">
+                        <img src={{dc.selected}} class="image-holder-right" id="image-holder-right" alt="">
+                        <canvas class="coveringCanvas" id="coveringCanvas"></canvas>
                     </div>
                     <div class="json-back">
                         this field should be json ret from server               
