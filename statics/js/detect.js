@@ -46,7 +46,7 @@ angular.module('detect_demo',[])
         this.selected = one;
         this.getBase64(one).then(function(imgbase64){
             data = {'img':imgbase64};
-            $http.post('/face/face_detect',data).then(function (data){
+            $http.post('/face/face_detect',JSON.stringify(data)).then(function (data){
                 console.log(data);
             },function errfun(e){
                 console.log('error during api');
