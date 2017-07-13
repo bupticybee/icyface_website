@@ -1,13 +1,8 @@
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <meta name="keywords" content="人脸识别,icyface,免费，图像识别">
-        <link rel="stylesheet" type="" href="statics/css/clear-style.css">
-        <link rel="stylesheet" type="" href="statics/css/share.css">
-        <link rel="stylesheet" type="" href="statics/css/index.css">
-    </head>
-    <body>
+{% extends 'web/base.html' %}
+{% block css %}
+    <link rel="stylesheet" type="" href="statics/css/index.css">
+{% endblock css%}
+        {% block content %}
         <div class="header-page">
             <div class="header-left">
                 <div class="span-logo">
@@ -71,7 +66,8 @@
             </div>
 
         </div>
+	{% endblock content %}
+        {% block js %}
         <script src="statics/js/angular.min.js"></script>
+	{% endblock js %}
             
-    </body>
-</html>

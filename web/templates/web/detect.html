@@ -1,27 +1,9 @@
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <meta name="keywords" content="人脸识别,icyface,免费，图像识别">
-        <link rel="stylesheet" type="" href="statics/css/clear-style.css">
-        <link rel="stylesheet" type="" href="statics/css/share.css">
+{% extends 'web/base.html' %}
+{% block css %}
         <link rel="stylesheet" type="" href="statics/css/detect.css">
-    </head>
-    <body>
-        <div class="header-page">
-            <div class="header-left">
-                <div class="span-logo">
-                    <h1 class="text-logo">Icyface</h1>
-                </div>
-                <div class="logo-descri">
-                    <h3>人脸识别平台</h3>
-                </div>
-            </div>
-            <div class="header-center">
-            </div>
-            <div class="header-right">
-            </div>
-        </div>
+{% endblock css%}
+        {% block content %}
+
 
         <div class="pic-top">
             <img class="img-head-without-align blur" src="statics/img/detect-frontpage.png" alt="">
@@ -31,6 +13,7 @@
                 </div>
             </div>
         </div>
+	{% verbatim %}   
         <div ng-app='detect_demo' ng-controller="detect_controller as dc" class="detect-area">
             <div class="img-rotate-full">
                 <div class="sm-left">
@@ -48,10 +31,12 @@
                 </div>
             </div>
         </div>
+	{% endverbatim %}
         <div class="footer">
             Powered by <a class="footer-url" href="http://cloud.icybee.cn">Icycloud</a>
         </div>
+	{% endblock content %}
+        {% block js %}
         <script src="statics/js/angular.min.js"></script>
         <script src="statics/js/detect.js"></script>
-    </body>
-</html>
+	{% endblock js %}

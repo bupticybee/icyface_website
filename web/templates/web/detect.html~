@@ -1,0 +1,56 @@
+{% extends 'web/base.html' %}
+{% block css %}
+        <link rel="stylesheet" type="" href="statics/css/detect.css">
+{% endblock css%}
+        {% block content %}
+
+	 <div class="header-page">
+            <div class="header-left">
+                <div class="span-logo">
+                    <h1 class="text-logo">Icyface</h1>
+                </div>
+                <div class="logo-descri">
+                    <h3>人脸识别平台</h3>
+                </div>
+            </div>
+            <div class="header-center">
+            </div>
+            <div class="header-right">
+            </div>
+        </div>
+
+        <div class="pic-top">
+            <img class="img-head-without-align blur" src="statics/img/detect-frontpage.png" alt="">
+            <div class="center-texts">
+                <div class="center-desc">
+                    人脸检测
+                </div>
+            </div>
+        </div>
+	{% verbatim %}   
+        <div ng-app='detect_demo' ng-controller="detect_controller as dc" class="detect-area">
+            <div class="img-rotate-full">
+                <div class="sm-left">
+                    <div class="selector-left" >
+                        <img src={{one}} class="demo-image-list {{one == dc.selected ? 'demo-image-list-selected':''}}" ng-repeat="one in dc.imageurls" ng-click="dc.click(one)" alt="">
+                    </div>
+                </div>
+                <div class="img-right">
+                    <div class='image-big'>
+                        <img src={{dc.selected}} class="image-holder-right" alt="">
+                    </div>
+                    <div class="json-back">
+                        this field should be json ret from server               
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% endverbatim %}
+        <div class="footer">
+            Powered by <a class="footer-url" href="http://cloud.icybee.cn">Icycloud</a>
+        </div>
+	{% endblock content %}
+        {% block js %}
+        <script src="statics/js/angular.min.js"></script>
+        <script src="statics/js/detect.js"></script>
+	{% endblock js %}

@@ -1,0 +1,59 @@
+{% extends 'web/base.html' %}
+{% block css %}
+    <link rel="stylesheet" type="" href="statics/css/index.css">
+{% endblock css%}
+        {% block content %}
+        <div class="wrapper-content">
+
+            <div class="pic-top">
+                <img class="img-head" src="statics/img/horseface.jpg" alt="">
+                <div class="center-texts">
+                    <div class="center-desc">
+                        高准确率检测识别人脸，永久免费
+                    </div>
+                    <a class="center-api-buttom" href="api">
+                        使用api
+                    </a>
+                </div>
+            </div>
+            <div class="face-api-ent">
+                <div class="face-api-desc">
+                    人脸识别功能
+                </div>
+            </div>
+            <div class="api-specific">
+                <div class="api-detect block">
+                    <div class="img-out">
+                        <img src="statics/img/detect.jpeg" class="img-cir">
+                    </div>
+                    <div class="api-text">
+                        人脸检测
+                    </div>
+                    <div class="api-append">
+                        从一张照片中检测出所有人脸
+                    </div>
+                    <a href="detect.html" class="demo">尝试demo</a>
+                </div>
+                <div class="api-compair block">
+                    <div class="img-out">
+                        <img src="statics/img/compair.png" class="img-cir">
+                    </div>
+                    <div class="api-text">
+                        人脸比较
+                    </div>
+                    <div class="api-append">
+                        比较两张人脸是否是同一个人
+                    </div>
+                    <a href="demo" class="demo">尝试demo</a>
+                </div>
+            </div>
+            <div class="footer">
+                Powered by <a class="footer-url" href="http://cloud.icybee.cn">Icycloud</a>
+            </div>
+
+        </div>
+	{% endblock content %}
+        {% block js %}
+        <script src="statics/js/angular.min.js"></script>
+	{% endblock js %}
+            
