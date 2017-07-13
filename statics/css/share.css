@@ -29,6 +29,7 @@
 .text-logo {
     text-align: center;
     padding: 5px 5px;
+    color: black;
 }
 
 .logo-descri {
@@ -83,4 +84,8 @@
 }
 .blur {
     -webkit-filter: blur(3px)
+}
+.dismiss-a {
+    display: block;
+    color: white;
 }
