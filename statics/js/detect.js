@@ -113,13 +113,9 @@ angular.module('detect_demo',[])
         return draw.join('');
     }
     this.json_ret = 'no response'
-    function setJsonRes(resjson,stringify){
-        if(stringify){
-            retstr = jsonFormat(JSON.stringify(resjson)).trim();
-        }else {
-            retstr = jsonFormat(resjson).trim();
-        }
-    return retstr;
+    function setJsonRes(resjson){
+        retstr = jsonFormat(JSON.stringify(resjson)).trim();
+        return retstr;
     }
     this.getBase64 = function(URL){
         return new Promise(
