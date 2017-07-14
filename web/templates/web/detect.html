@@ -14,7 +14,7 @@
             </div>
         </div>
 	{% verbatim %}   
-        <div ng-app='detect_demo' ng-controller="detect_controller as dc" class="detect-area">
+        <div ng-app='detect_demo'  ng-controller="detect_controller as dc" class="detect-area">
             <div class="img-rotate-full">
                 <div class="sm-left">
                     <div class="selector-left" >
@@ -25,6 +25,15 @@
                     <div class='image-big'>
                         <img src={{dc.selected}} class="image-holder-right" id="image-holder-right" alt="">
                         <canvas class="coveringCanvas" id="coveringCanvas"></canvas>
+                    </div>
+                    <div class="img-upload">
+                        <div class="upload-img">
+                            <span class="upload-text">上传检测</span>
+                            <input type="file" name="" value="" class="image-input" data-ng-init="dc.init()">
+                        </div>
+                        <div class="url-img">
+                            
+                        </div>
                     </div>
                     <div class="json-back">
                         <div class="json-title">
