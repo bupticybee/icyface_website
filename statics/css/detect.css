@@ -72,13 +72,19 @@
     text-align: center;
 }
 .json-back {
-    border: solid;
+    position: relative;
+    background-color: #fbfbfb;
+    border: 1px solid #cacaca;
+    border-width: 1px;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     display: block;
     height: 300px;
+    padding: 10px;
     flex:1;
+    display: flex;
+    flex-direction: column;
 }
 .coveringCanvas{ 
     position: relative;
@@ -88,4 +94,26 @@
     text-align: center;
     width:100%; height:100%; 
     position:absolute; top:0px; left:0px;
+}
+.json-title {
+    font-size: 20px;
+    font-weight: 4px;
+}
+.json-response {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-align: left;
+    flex:8
+}
+.textarea-json {
+    padding-top: 5px;
+    flex: 1;
+    background-color: #fbfbfb;
+    resize: none;
+    border:none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width:100%;
 }

@@ -1,6 +1,6 @@
 {% extends 'web/base.html' %}
 {% block css %}
-        <link rel="stylesheet" type="" href="statics/css/detect.css?v=5.7">
+        <link rel="stylesheet" type="" href="statics/css/detect.css?v={{ wpis.entry.lastChangeDate|date:'Y-m-d-H:i' }}">
 {% endblock css%}
         {% block content %}
 
@@ -27,7 +27,12 @@
                         <canvas class="coveringCanvas" id="coveringCanvas"></canvas>
                     </div>
                     <div class="json-back">
-                        this field should be json ret from server               
+                        <div class="json-title">
+                            Response Json
+                        </div>
+                        <div class="json-response">
+                            <textarea readonly rows="" cols="" class="textarea-json">{{dc.json_ret}}</textarea>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,5 +44,5 @@
 	{% endblock content %}
         {% block js %}
         <script src="statics/js/angular.min.js"></script>
-        <script src="statics/js/detect.js"></script>
+        <script src="statics/js/detect.js?v={{ wpis.entry.lastChangeDate|date:'Y-m-d-H:i' }}"></script>
 	{% endblock js %}
