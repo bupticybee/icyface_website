@@ -44,6 +44,7 @@ angular.module('detect_demo',[])
                 console.log(that.imageurls)
             });
         });
+        this.click(this.selected)
     }
     function toDataURL(src, callback, outputFormat) {
         var img = new Image();
@@ -112,7 +113,7 @@ angular.module('detect_demo',[])
         return draw.join('');
     }
     this.json_ret = 'no response'
-    function setJsonRes(resjson,stringify=true){
+    function setJsonRes(resjson,stringify){
         if(stringify){
             retstr = jsonFormat(JSON.stringify(resjson)).trim();
         }else {
