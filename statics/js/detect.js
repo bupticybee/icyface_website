@@ -48,7 +48,6 @@ angular.module('detect_demo',[])
     }
     function toDataURL(src, callback, outputFormat) {
         var img = new Image();
-        img.crossOrigin = 'Anonymous';
         img.onload = function() {
             var canvas = document.createElement('CANVAS');
             var ctx = canvas.getContext('2d');
