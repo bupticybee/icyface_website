@@ -21,6 +21,7 @@ def detect(request):
 
 @csrf_exempt
 def getimage(request):
+	errmsg = ''
 	try:
 		imdata = json.loads(request.body).get('imgurl',None)
 		imdata = requests.get(imdata)
@@ -34,9 +35,11 @@ def getimage(request):
 		else:
 			img_str = 'data:image/png;base64,' + img_str
 		response = img_str
-	except:
+	except Exception,e:
 		response = '/statics/img/wrong.png'
+		errmsg = str(e)
 	response = json.dumps({
 		'base64image':response,
+		'errmsg':errmsg,
 	})
 	return HttpResponse(response, content_type='application/json')
