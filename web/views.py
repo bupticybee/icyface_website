@@ -25,7 +25,9 @@ def getimage(request):
 	try:
 		imdata = json.loads(request.body).get('imgurl',None)
 		imdata = requests.get(imdata)
-		imgfile = Image.open(BytesIO(imdata.content))
+		byteimg = BytesIO(imdata.content)
+		byteimg.seek(0)
+		imgfile = Image.open(byteimg)
 		buffer = cStringIO.StringIO()
 		imgfile.save(buffer, format="JPEG")
 		img_str = base64.b64encode(buffer.getvalue())
