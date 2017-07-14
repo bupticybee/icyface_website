@@ -88,11 +88,14 @@ angular.module('detect_demo',[])
 
     }
     this.click = function(one){
+        canvas = document.getElementById('coveringCanvas')
+        ctx = canvas.getContext('2d')
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         this.selected = one;
         this.getBase64(one).then(function(imgbase64){
             data = {'img':imgbase64};
             $http.post('/face/face_detect',JSON.stringify(data)).then(function (data){
-                update_canvas(data);
+                update_canvas(data.data['boxes']);
 
             },function errfun(e){
                 console.log('error during api');
