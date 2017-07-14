@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,3 +85,4 @@ STATIC_URL = '/statics/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "statics"),
 )
+CORS_ORIGIN_ALLOW_ALL = True

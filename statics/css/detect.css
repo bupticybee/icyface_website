@@ -155,6 +155,8 @@
 }
 .url-img {
     flex: 3.5;
+    flex-direction: row;
+    display: flex;
     border: solid 1px #379edf;
     margin-left:10px;
 }
@@ -171,4 +173,29 @@
     width: 100%;
     height: 100%;
     opacity: 0;
+}
+.url {
+    flex: 1;
+}
+.upload-buttom {
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+    line-height: 30px;
+    background-color: #379edf;
+    color: white;
+}
+.upload-buttom:hover {
+    background-color:#42b6ff;
+}
+.url-textarea {
+    vertical-align: middle;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    height: 28px;
+    line-height: 28px;
 }

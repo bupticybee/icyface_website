@@ -188,10 +188,19 @@ angular.module('detect_demo',[])
                 that.json_ret = 'error while processing api service, try later perpahs~'; 
                 console.log('error during api');
             })
-            
-
         })
 
+    }
+    this.urlupload = function(){
+        if (this.urlcontent){
+            data = {'imgurl':this.urlcontent}
+            $http.post('/getimage',data).then(function (data){
+                that.imageurls.unshift(data.data['base64image'])
+                that.click(data.data['base64image'])
+            },function errfun(err){
+                alert('image url wrong')
+            });
+        }
     }
 })
 

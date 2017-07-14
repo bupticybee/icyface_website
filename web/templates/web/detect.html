@@ -32,7 +32,12 @@
                             <input type="file" name="" value="" class="image-input" data-ng-init="dc.init()">
                         </div>
                         <div class="url-img">
-                            
+                            <div class="url">
+                                <textarea rows="" cols="" class="url-textarea" ng-model="dc.urlcontent"></textarea>
+                            </div>
+                            <span class="upload-buttom" ng-click="dc.urlupload()">
+                                检测
+                            </span>
                         </div>
                     </div>
                     <div class="json-back">
