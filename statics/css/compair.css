@@ -1,0 +1,25 @@
+
+.sm-left-and-right {
+    max-width: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+}
+.image-big {
+    box-sizing: border-box;
+    flex: 1;
+    width: 50%;
+    position: relative;
+    display: block;
+    height: 300px;
+    text-align: center;
+    margin:0px;
+    padding:20px;
+}
+.img-two {
+    display: flex;
+    flex-direction: row;
+}

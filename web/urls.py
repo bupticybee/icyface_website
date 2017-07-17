@@ -5,6 +5,7 @@ urlpatterns = [
 	url(r'^$',views.index),
 	url(r'^index.html$',views.index),
 	url(r'^detect.html$',views.detect),
+	url(r'^compair.html$',views.compair),
 	url(r'^getimage$',views.getimage),
 ]
 

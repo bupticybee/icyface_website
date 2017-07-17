@@ -1,6 +1,6 @@
 {% extends 'web/base.html' %}
 {% block css %}
-        <link rel="stylesheet" type="" href="statics/css/detect.css?v={{ wpis.entry.lastChangeDate|date:'Y-m-d-H:i' }}">
+        <link rel="stylesheet" type="" href="statics/css/detect.css?v={% now "U" %}">
 {% endblock css%}
         {% block content %}
 
@@ -33,7 +33,7 @@
                         </div>
                         <div class="url-img">
                             <div class="url">
-                                <textarea rows="" cols="" class="url-textarea" ng-model="dc.urlcontent"></textarea>
+                                <textarea rows="" cols="" placeholder='图片url地址' class="url-textarea" ng-model="dc.urlcontent"></textarea>
                             </div>
                             <span class="upload-buttom" ng-click="dc.urlupload()">
                                 检测
@@ -58,5 +58,5 @@
 	{% endblock content %}
         {% block js %}
         <script src="statics/js/angular.min.js"></script>
-        <script src="statics/js/detect.js?v={{ wpis.entry.lastChangeDate|date:'Y-m-d-H:i' }}"></script>
+        <script src="statics/js/detect.js?v={% now "U" %}"></script>
 	{% endblock js %}

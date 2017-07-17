@@ -19,6 +19,10 @@ def index(request):
 def detect(request):
 	return render_to_response('web/detect.html',{})
 
+def compair(request):
+	return render_to_response('web/compair.html',{})
+
+
 @csrf_exempt
 def getimage(request):
 	errmsg = ''

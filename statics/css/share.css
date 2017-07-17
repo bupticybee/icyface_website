@@ -89,3 +89,205 @@
     display: block;
     color: white;
 }
+
+.center-desc {
+    text-align: center;
+    font-size: 60px;
+}
+.detect-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin:30px;
+ }
+.img-right-show {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    flex: 1.5;
+    height: 300px;
+}
+.img-rotate-full {
+    min-width: 500px;
+    display: flex;
+    flex: 2;
+    height: 700px;
+    overflow: hidden;
+}
+.sm-left {
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+}
+.selector-left {
+    flex: 2;
+    overflow-y: scroll;
+}
+.img-right {
+    flex: 7;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.demo-image-list {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 2px;
+    border: solid;
+    border-width: 3px;    
+    border-color: transparent;
+}
+.demo-image-list:hover {
+    box-sizing: border-box;
+    border: solid;
+    border-width: 3px;    
+    border-color:gray;
+}
+.demo-image-list-selected {
+    box-sizing: border-box;
+    border: solid;
+    border-width: 3px;    
+    border-color:lightblue;
+}
+.image-holder-right {
+    height: 100%;
+    width: auto;
+}
+.image-big {
+    position: relative;
+    display: block;
+    height: 300px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.json-back {
+    position: relative;
+    background-color: #fbfbfb;
+    border: 1px solid #cacaca;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    height: 300px;
+    padding: 10px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+.coveringCanvas{ 
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width:100%; height:100%; 
+    position:absolute; top:0px; left:0px;
+}
+.json-title {
+    font-size: 20px;
+    font-weight: 4px;
+}
+.json-response {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-align: left;
+    flex:8
+}
+.textarea-json {
+    padding-top: 5px;
+    flex: 1;
+    background-color: #fbfbfb;
+    resize: none;
+    border:none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width:100%;
+}
+.img-upload {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    margin: 5px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.upload-img {
+    font-size: 15px;
+    border: solid 1px #379edf;
+    max-width: 100px;
+    flex: 1;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;       /* the same as your div height */
+    -webkit-transition: color .4s ease;
+    -moz-transition: color .4s ease;
+    -o-transition: color .4s ease;
+    transition: color .4s ease;
+    position: relative;
+}
+.upload-img:hover{
+    background:#379edf;
+    border: solid 1px #379edf;
+    color: white;
+    text-decoration: none;
+    -webkit-transition: color .4s ease;
+    -moz-transition: color .4s ease;
+    -o-transition: color .4s ease;
+    transition: color .4s ease;
+}
+.url-img {
+    flex: 3.5;
+    flex-direction: row;
+    display: flex;
+    border: solid 1px #379edf;
+    margin-left:10px;
+}
+.input-img {
+    height: 100%;
+    opacity: 0
+}
+.upload-text {
+    text-align: center;
+    width:100%;
+    position: absolute;
+}
+.image-input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.url {
+    flex: 1;
+}
+.upload-buttom {
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+    line-height: 30px;
+    background-color: #379edf;
+    color: white;
+}
+.upload-buttom:hover {
+    background-color:#42b6ff;
+}
+.url-textarea {
+    vertical-align: middle;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    height: 28px;
+    line-height: 28px;
+}

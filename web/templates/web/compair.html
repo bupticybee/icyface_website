@@ -1,0 +1,73 @@
+{% extends 'web/base.html' %}
+{% block css %}
+        <link rel="stylesheet" type="" href="statics/css/compair.css?v={% now "U" %}">
+{% endblock css%}
+        {% block content %}
+
+
+        <div class="pic-top">
+            <img class="img-head-without-align blur" src="statics/img/detect-frontpage.png" alt="">
+            <div class="center-texts">
+                <div class="center-desc">
+                    人脸对比
+                </div>
+            </div>
+        </div>
+	{% verbatim %}   
+        <div ng-app='compair_demo'  ng-controller="compair_controller as cc" class="detect-area">
+            <div class="img-rotate-full">
+                <div class="sm-left-and-right">
+                    <div class="selector-left" >
+                        <img src={{one}} class="demo-image-list {{one == cc.selected_left ? 'demo-image-list-selected':''}}" ng-repeat="one in cc.imageurls" ng-click="cc.click(one,'left')" alt="">
+                    </div>
+                </div>
+                <div class="img-right">
+                    <div class="img-two">
+                        <div class='image-big'>
+                            <img src={{cc.selected_left}} class="image-holder-right" id="image-holder-left" alt="">
+                            <canvas class="coveringCanvas" id="coveringCanvas-left"></canvas>
+                        </div>
+                        <div class='image-big'>
+                            <img src={{cc.selected_right}} class="image-holder-right" id="image-holder-right" alt="">
+                            <canvas class="coveringCanvas" id="coveringCanvas-right"></canvas>
+                        </div>
+                    </div>
+                    <div class="img-upload">
+                        <div class="upload-img">
+                            <span class="upload-text">上传检测</span>
+                            <input type="file" name="" value="" class="image-input" data-ng-init="cc.init()">
+                        </div>
+                        <div class="url-img">
+                            <div class="url">
+                                <textarea rows="" cols="" placeholder='图片url地址' class="url-textarea" ng-model="cc.urlcontent"></textarea>
+                            </div>
+                            <span class="upload-buttom" ng-click="cc.urlupload()">
+                                检测
+                            </span>
+                        </div>
+                    </div>
+                    <div class="json-back">
+                        <div class="json-title">
+                            Response Json
+                        </div>
+                        <div class="json-response">
+                            <textarea readonly rows="" cols="" class="textarea-json">{{cc.json_ret}}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm-left-and-right">
+                    <div class="selector-left" >
+                        <img src={{one}} class="demo-image-list {{one == cc.selected_right ? 'demo-image-list-selected':''}}" ng-repeat="one in cc.imageurls" ng-click="cc.click(one,'right')" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% endverbatim %}
+        <div class="footer">
+            Powered by <a class="footer-url" href="http://cloud.icybee.cn">Icycloud</a>
+        </div>
+	{% endblock content %}
+        {% block js %}
+        <script src="statics/js/angular.min.js"></script>
+        <script src="statics/js/compair.js?v={% now "U" %}"></script>
+	{% endblock js %}
