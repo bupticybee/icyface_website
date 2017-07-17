@@ -223,7 +223,7 @@ angular.module('compair_demo',[])
             data = {'imgurl':this.urlcontent}
             $http.post('/getimage',data).then(function (data){
                 that.imageurls.unshift(data.data['base64image'])
-                that.click(data.data['base64image'])
+                that.click(data.data['base64image'],'left')
             },function errfun(err){
                 alert('image url wrong')
             });
