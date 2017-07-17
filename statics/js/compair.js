@@ -41,11 +41,11 @@ angular.module('compair_demo',[])
         $(".image-input").change(function () {
             run(this, function (data) {
                 that.imageurls.unshift(data);
-                that.click(data);
+                that.click(data,'left');
                 console.log(that.imageurls)
             });
         });
-        //this.click(this.selected)
+        this.click(this.selected_left,'left')
     }
     function toDataURL(src, callback, outputFormat) {
         var img = new Image();
@@ -142,10 +142,10 @@ angular.module('compair_demo',[])
     }
     function update_canvas(retdata,which_canvas){
         if(which_canvas == 'left') {
-            canvas = document.getElementById(coveringCanvas-left)
+            canvas = document.getElementById('coveringCanvas-left')
             image_big = document.getElementById('image-holder-left')
         }else if (which_canvas == 'right'){
-            canvas = document.getElementById(coveringCanvas-right)
+            canvas = document.getElementById('coveringCanvas-right')
             image_big = document.getElementById('image-holder-right')
         }
         ctx = canvas.getContext('2d')
