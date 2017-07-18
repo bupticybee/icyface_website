@@ -228,7 +228,7 @@ angular.module('compair_demo',[])
                 }else{
                     that.text_ret = "很肯定不是一个人";
                 }
-                that.text_ret += '，把握程度：' + data.data['dist'];
+                that.text_ret += '，相似程度：' + data.data['dist'];
 
             },function errfun(e){
                 that.json_ret = 'error while processing api service, try later perpahs~'; 
