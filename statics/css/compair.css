@@ -16,9 +16,25 @@
     display: block;
     height: 300px;
     text-align: center;
-    margin:0px;
+    margin:15px;
+    overflow: hidden;
 }
 .img-two {
     display: flex;
     flex-direction: row;
+}
+.sim {
+    width: 50px;
+}
+.response-sim {
+    height: 20px;
+    width: 100px;
+    text-align: left;
+}
+.json-response {
+    display: flex;
+    flex-direction: row;
+}
+.json-title {
+    margin-bottom: 20px;
 }

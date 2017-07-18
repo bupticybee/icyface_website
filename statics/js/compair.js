@@ -2,14 +2,19 @@ angular.module('compair_demo',[])
 .controller('compair_controller',function detect_controller($scope,$http){
     that = this
     this.selected_left = "statics/img/faces/face_1.jpg";
-    this.selected_right = "statics/img/faces/face_1.jpg";
+    this.selected_right = "statics/img/faces/face_m_1.jpg";
     this.imageurls = [
+        "statics/img/faces/face_m_1.jpg",
         "statics/img/faces/face_1.jpg",
+        "statics/img/faces/face_1_5.jpg",
         "statics/img/faces/face_2.jpg",
+        "statics/img/faces/face_2_5.jpg",
         "statics/img/faces/face_3.jpg",
         "statics/img/faces/face_4.jpg",
         "statics/img/faces/face_5.jpg",
+        "statics/img/faces/face_5_5.jpg",
         "statics/img/faces/face_6.jpg",
+        "statics/img/faces/face_6_5.jpg",
         "statics/img/faces/face_7.jpg"
     ]
     function run(input_file,get_data){
@@ -113,6 +118,7 @@ angular.module('compair_demo',[])
         return draw.join('');
     }
     this.json_ret = 'no response'
+    this.text_ret = '无数据'
     function setJsonRes(resjson){
         retstr = jsonFormat(JSON.stringify(resjson)).trim();
         return retstr;
@@ -211,6 +217,18 @@ angular.module('compair_demo',[])
                 update_canvas([data.data['box1']],'left');
                 update_canvas([data.data['box2']],'right');
                 that.json_ret = setJsonRes(data.data)
+                if(data.data['dist'] > 0.7){
+                    that.text_ret = '很肯定是一个人';
+                }else if(data.data['dist'] > 0.6){
+                    that.text_ret = '很可能是一个人';
+                }else if (data.data['dist'] > 0.5) {
+                    that.text_ret = '可能是一个人';
+                }else if (data.data['dist'] > 0.4){
+                    that.text_ret = "可能不是一个人";
+                }else{
+                    that.text_ret = "很肯定不是一个人";
+                }
+
             },function errfun(e){
                 that.json_ret = 'error while processing api service, try later perpahs~'; 
                 console.log('error during api');
