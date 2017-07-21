@@ -210,8 +210,12 @@ angular.module('compair_demo',[])
         ctx_left.clearRect(0, 0, canvas_left.width, canvas_right.height);
         ctx_right.clearRect(0, 0, canvas_right.width, canvas_right.height);
         that.json_ret = 'processing api server...'
+        that.text_ret = '无数据'
 
         this.getBase64(this.selected_left,this.selected_right).then(function(imgbase64_all){
+            if(imgbase64_all[0].length > 4000000 || imgbase64_all[1].length > 4000000){
+                alert('发现大于4M的文件，请上传小一些的文件');
+            }
             data = {'img1':imgbase64_all[0],'img2':imgbase64_all[1]};
             $http.post('/face/face_recognize',JSON.stringify(data)).then(function (data){
                 update_canvas([data.data['box1']],'left');
