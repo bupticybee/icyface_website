@@ -213,8 +213,9 @@ angular.module('compair_demo',[])
         that.text_ret = '无数据'
 
         this.getBase64(this.selected_left,this.selected_right).then(function(imgbase64_all){
-            if(imgbase64_all[0].length > 4000000 || imgbase64_all[1].length > 4000000){
-                alert('发现大于4M的文件，请上传小一些的文件');
+            if(imgbase64_all[0].length > 30000000 || imgbase64_all[1].length > 4000000){
+                alert('发现大于2M的文件，请上传小一些的文件');
+                return;
             }
             data = {'img1':imgbase64_all[0],'img2':imgbase64_all[1]};
             $http.post('/face/face_recognize',JSON.stringify(data)).then(function (data){

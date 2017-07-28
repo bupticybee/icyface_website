@@ -180,6 +180,10 @@ angular.module('detect_demo',[])
         this.selected = one;
         that.json_ret = 'processing api server...'
         this.getBase64(one).then(function(imgbase64){
+            if(imgbase64.length > 30000000){
+                alert('发现大于2M的文件，请上传小一些的文件');
+                return;
+            }
             data = {'img':imgbase64};
             $http.post('/face/face_detect',JSON.stringify(data)).then(function (data){
                 update_canvas(data.data['boxes']);
